@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta http-equiv="refresh" content="7;url=<%= redirectUrl %>">
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            color: rgb(10, 100, 55); /* Adjust the text color for better visibility */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(139, 224, 110); /* Adjust color for better visibility */
+        }
+    </style>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <p class="countdown" id="countdown">Redirecting in 7 seconds...</p>
+    <p>If you are not redirected, <a href="<%= redirectUrl %>" style="color: rgb(139, 224, 110);">click here</a>.</p>
+
+    <script>
+        // Set the time for the countdown (in seconds)
+        var countdownTime = 7;
+        var countdownElement = document.getElementById('countdown');
+        
+        // Function to update the countdown
+        function updateCountdown() {
+            countdownElement.textContent = 'Redirecting in ' + countdownTime + ' seconds...';
+            countdownTime--;
+            if (countdownTime < 0) {
+                countdownTime = 0;
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
