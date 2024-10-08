@@ -1,16 +1,9 @@
 name: Build and Push Docker Image
 
-# on:
-#   push:
-#     branches:
-#       - main
-
 on:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
+  push:
+    branches:
+      - main
 
 jobs:
   build:
