@@ -43,7 +43,7 @@ jobs:
         with:
           context: .  # Change this to root directory
           push: true
-          tags: debasis1999/project-work:${{ env.SHA }}  # Versioned tag with commit SHA
+          tags: debasis1999/project-work:${{ env.SHA }}  # Versioned tag with commit SHA.
           build-args: |
             SQL_USER_ID=${{ secrets.SQL_USER_ID }}
             SQL_DB_PASS=${{ secrets.SQL_DB_PASS }}
